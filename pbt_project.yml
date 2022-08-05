@@ -1,0 +1,89 @@
+name: hsbc_functional_requirements
+description: ''
+version: 0.0.1
+author: nimbus@simpledatalabs.com
+language: scala
+buildSystem: maven
+pipelines:
+  pipelines/SQLOperators:
+    name: SQLOperators
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-05 20:51:53'
+    datasets:
+      inputs:
+      - 2678/datasets/tpch-customer
+      outputs:
+      - 2678/datasets/tpch-sql-examples
+      - 2678/datasets/aggregate-examples
+      - 2678/datasets/row-number-example
+      - 2678/datasets/select-distinct-example
+    dependencies: {}
+datasets:
+  datasets/aggregate-examples:
+    name: aggregate-examples
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 20:57:16'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 20:57:16'
+  datasets/row-number-example:
+    name: row-number-example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 20:57:46'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 20:57:46'
+  datasets/tpch-sql-examples:
+    name: tpch-sql-examples
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 20:54:44'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 20:54:44'
+  datasets/tpch-customer:
+    name: tpch-customer
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 20:52:38'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 20:52:38'
+  datasets/select-distinct-example:
+    name: select-distinct-example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 20:58:18'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 20:58:18'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+dependencies: '[]'

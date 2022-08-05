@@ -1,0 +1,16 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: max_balance
+    type: decimal(18,2)
+    nullable: true
+    metadata: {}
+  - name: num_nations
+    type: long
+    nullable: false
+    metadata: {}
+  - name: balance_sum
+    type: decimal(28,2)
+    nullable: true
+    metadata: {}

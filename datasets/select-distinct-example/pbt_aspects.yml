@@ -1,0 +1,12 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_nationkey
+    type: long
+    nullable: true
+    metadata: {}
+  - name: c_mktsegment
+    type: string
+    nullable: true
+    metadata: {}

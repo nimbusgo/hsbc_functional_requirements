@@ -1,0 +1,28 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: us_c_custkey
+    type: long
+    nullable: true
+    metadata: {}
+  - name: us_c_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: us_nation_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: uk_c_custkey
+    type: long
+    nullable: true
+    metadata: {}
+  - name: uk_c_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: uk_nation_name
+    type: string
+    nullable: true
+    metadata: {}

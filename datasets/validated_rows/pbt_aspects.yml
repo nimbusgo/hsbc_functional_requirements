@@ -1,0 +1,36 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: extra_whitespace
+    type: string
+    nullable: true
+    metadata: {}
+  - name: c_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: all_upper
+    type: string
+    nullable: true
+    metadata: {}
+  - name: all_lower
+    type: string
+    nullable: true
+    metadata: {}
+  - name: extra_chars
+    type: string
+    nullable: true
+    metadata: {}
+  - name: sometimes_null
+    type: integer
+    nullable: true
+    metadata: {}
+  - name: sometimes_empty
+    type: string
+    nullable: true
+    metadata: {}
+  - name: date_example
+    type: string
+    nullable: true
+    metadata: {}

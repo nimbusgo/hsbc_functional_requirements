@@ -1,0 +1,125 @@
+{
+  "id" : "taDjiUcSBksvQnVOq7Qy8",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "BUODxOXP9EQJuEdIAFSxL",
+      "slug" : "in0"
+    } ],
+    "outputs" : [ {
+      "id" : "JcpEEmYhQ7Z9-DCO0wJbO",
+      "slug" : "out0"
+    }, {
+      "id" : "H2k_0fzKeRwerBhQ3_L6P",
+      "slug" : "out1"
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "logic"
+  },
+  "connections" : [ {
+    "id" : "cPTNis1VfRJH39PvwRfge",
+    "source" : "taDjiUcSBksvQnVOq7Qy8",
+    "sourcePort" : "BUODxOXP9EQJuEdIAFSxL",
+    "target" : "AE4CSajMsQdkKwPtpA_Y7",
+    "targetPort" : "9NeIGuEabKd01J1Pq-_Q0"
+  }, {
+    "id" : "ypwVUklqp52b5ShyydFc5",
+    "source" : "taDjiUcSBksvQnVOq7Qy8",
+    "sourcePort" : "BUODxOXP9EQJuEdIAFSxL",
+    "target" : "WWiH0SbPiLjo5iFz8cMoy",
+    "targetPort" : "b7VcEhYyoaqTRmrz970fu"
+  }, {
+    "id" : "p2ttOgRuJKmt9wm8I1elu",
+    "source" : "WWiH0SbPiLjo5iFz8cMoy",
+    "sourcePort" : "6yWpfzaw0YUTJirHDfx95",
+    "target" : "taDjiUcSBksvQnVOq7Qy8",
+    "targetPort" : "JcpEEmYhQ7Z9-DCO0wJbO"
+  }, {
+    "id" : "ApqdRddSt19xzek5rsv95",
+    "source" : "AE4CSajMsQdkKwPtpA_Y7",
+    "sourcePort" : "lcOJqY28j929pcSesvjHj",
+    "target" : "taDjiUcSBksvQnVOq7Qy8",
+    "targetPort" : "H2k_0fzKeRwerBhQ3_L6P"
+  } ],
+  "processes" : {
+    "AE4CSajMsQdkKwPtpA_Y7" : {
+      "id" : "AE4CSajMsQdkKwPtpA_Y7",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "FilterUS_1",
+        "slug" : "FilterUS_1",
+        "x" : 260.0001178560412,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "9NeIGuEabKd01J1Pq-_Q0",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "lcOJqY28j929pcSesvjHj",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "nation_name = 'UNITED STATES'"
+        }
+      }
+    },
+    "WWiH0SbPiLjo5iFz8cMoy" : {
+      "id" : "WWiH0SbPiLjo5iFz8cMoy",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "FilterUK_1",
+        "slug" : "FilterUK_1",
+        "x" : 260.00061601363643,
+        "y" : 140,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "b7VcEhYyoaqTRmrz970fu",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "6yWpfzaw0YUTJirHDfx95",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "nation_name = 'UNITED KINGDOM'"
+        }
+      }
+    }
+  }
+}

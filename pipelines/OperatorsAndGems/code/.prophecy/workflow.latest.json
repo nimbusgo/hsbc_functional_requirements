@@ -683,8 +683,8 @@
       "metadata" : {
         "label" : "LeftJoin",
         "slug" : "LeftJoin",
-        "x" : 911.0000816278135,
-        "y" : 327,
+        "x" : 920.0000816278134,
+        "y" : 342,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

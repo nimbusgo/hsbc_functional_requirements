@@ -19,8 +19,12 @@ object Main {
     val (df_ValidateRules_out0, df_ValidateRules_out1) =
       ValidateRules(spark,         df_CreateExamples)
     validation_rules_output(spark, df_ValidateRules_out1)
-    val df_CreateFirst = CreateFirst(spark, df_tpch_customer)
-    val df_CreateLast  = CreateLast(spark,  df_tpch_customer)
+    val df_SelectEbdciddFields = SelectEbdciddFields(spark, df_tpch_customer)
+    ebcdic_example(spark, df_SelectEbdciddFields)
+    val df_read_ebcdic_example = read_ebcdic_example(spark)
+    val df_Identity            = Identity(spark,    df_read_ebcdic_example)
+    val df_CreateFirst         = CreateFirst(spark, df_tpch_customer)
+    val df_CreateLast          = CreateLast(spark,  df_tpch_customer)
     val df_CreateDuplicates =
       CreateDuplicates(spark, df_CreateFirst, df_CreateLast)
     validated_rows(spark,     df_ValidateRules_out0)
@@ -28,7 +32,6 @@ object Main {
     dedupe_first(spark, df_DeduplicateFirst)
     val df_DeduplicateLast = DeduplicateLast(spark, df_CreateDuplicates)
     dedupe_last(spark, df_DeduplicateLast)
-    val df_tpch_orders = tpch_orders(spark)
   }
 
   def main(args: Array[String]): Unit = {

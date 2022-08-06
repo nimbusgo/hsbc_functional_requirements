@@ -49,12 +49,13 @@ pipelines:
     datasets:
       inputs:
       - 2678/datasets/tpch-customer
-      - 2678/datasets/tpch-orders
+      - 2678/datasets/ebcdic_example
       outputs:
       - 2678/datasets/validation-rules-output
       - 2678/datasets/validated_rows
       - 2678/datasets/dedupe-first
       - 2678/datasets/dedupe-last
+      - 2678/datasets/ebcdic_example
     dependencies: {}
 datasets:
   datasets/order-by-example:
@@ -129,18 +130,6 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 20:57:46'
-  datasets/validation-rules-output:
-    name: validation-rules-output
-    description: ''
-    author: nimbus@simpledatalabs.com
-    createdAt: '2022-08-05 22:42:56'
-    physicalDatasets:
-      dev:
-        fabricId: 51
-        datasetType: File
-        description: ''
-        author: nimbus@simpledatalabs.com
-        createdAt: '2022-08-05 22:42:56'
   datasets/tpch-part:
     name: tpch-part
     description: ''
@@ -189,6 +178,30 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 22:45:39'
+  datasets/validation-rules-output:
+    name: validation-rules-output
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 22:42:56'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 22:42:56'
+  datasets/ebcdic_example:
+    name: ebcdic_example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 23:42:01'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 23:42:01'
   datasets/tpch-orders:
     name: tpch-orders
     description: ''

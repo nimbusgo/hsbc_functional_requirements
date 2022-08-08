@@ -13,8 +13,7 @@ object SelectEbdciddFields {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
     in.select(col("c_name"),
-              abs(col("c_acctbal")).cast(DecimalType(18, 2)).as("c_acctbal"),
-              col("c_custkey").cast(DecimalType(10,      0)).as("c_custkey")
+              col("c_custkey").cast(DecimalType(10, 0)).as("c_custkey")
     )
 
 }

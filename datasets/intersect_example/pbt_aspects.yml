@@ -1,0 +1,16 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: c_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: c_acctbal
+    type: decimal(18,2)
+    nullable: true
+    metadata: {}
+  - name: c_custkey
+    type: decimal(10,0)
+    nullable: true
+    metadata: {}

@@ -21,17 +21,21 @@ object Main {
     validation_rules_output(spark, df_ValidateRules_out1)
     val df_SelectEbdciddFields = SelectEbdciddFields(spark, df_tpch_customer)
     ebcdic_example(spark, df_SelectEbdciddFields)
-    val df_read_ebcdic_example = read_ebcdic_example(spark)
-    val df_Identity            = Identity(spark,    df_read_ebcdic_example)
-    val df_CreateFirst         = CreateFirst(spark, df_tpch_customer)
-    val df_CreateLast          = CreateLast(spark,  df_tpch_customer)
+    val df_CreateFirst = CreateFirst(spark, df_tpch_customer)
+    val df_CreateLast  = CreateLast(spark,  df_tpch_customer)
     val df_CreateDuplicates =
       CreateDuplicates(spark, df_CreateFirst, df_CreateLast)
     validated_rows(spark,     df_ValidateRules_out0)
     val df_DeduplicateFirst = DeduplicateFirst(spark, df_CreateDuplicates)
     dedupe_first(spark, df_DeduplicateFirst)
     val df_DeduplicateLast = DeduplicateLast(spark, df_CreateDuplicates)
-    dedupe_last(spark, df_DeduplicateLast)
+    dedupe_last(spark,     df_DeduplicateLast)
+    parquet_example(spark, df_SelectEbdciddFields)
+    val df_parquet_example_1   = parquet_example_1(spark)
+    val df_read_ebcdic_example = read_ebcdic_example(spark)
+    val df_Intersect =
+      Intersect(spark,       df_read_ebcdic_example, df_parquet_example_1)
+    intersect_example(spark, df_Intersect)
   }
 
   def main(args: Array[String]): Unit = {

@@ -588,8 +588,8 @@
       "metadata" : {
         "label" : "tpch-customer",
         "slug" : "tpch_customer",
-        "x" : 68.00006686622449,
-        "y" : 518,
+        "x" : 51.000066866224486,
+        "y" : 537,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,

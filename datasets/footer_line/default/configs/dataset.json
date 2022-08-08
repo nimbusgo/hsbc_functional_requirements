@@ -1,0 +1,1 @@
+{"format":"text","path":"/data/tmp/hsbc/tpch-examples/header_footers/footer","writeMode":"overwrite","compression":null,"wholetext":null,"partitionColumns":null,"schema":{"type":"struct","fields":[{"name":"value","type":"string","nullable":false,"metadata":{}}]},"lineSep":null,"pgpEncrypted":null,"datasetType":"File","useSchema":true}

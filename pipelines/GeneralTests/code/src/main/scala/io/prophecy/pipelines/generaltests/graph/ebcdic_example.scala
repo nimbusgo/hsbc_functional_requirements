@@ -16,7 +16,6 @@ object ebcdic_example {
     import _root_.io.prophecy.libs.FixedFormatSchemaImplicits._
     val schema = Some("""ebcdic record
 string(18) c_name ;
-decimal(18, 2) c_acctbal ;
 decimal(10, 0) c_custkey ;
 end""").map(s => parse(s).asInstanceOf[FFSchemaRecord])
     var writer = in.write.format("io.prophecy.libs.FixedFileFormat")

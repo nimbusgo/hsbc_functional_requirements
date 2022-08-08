@@ -5,21 +5,54 @@ author: nimbus@simpledatalabs.com
 language: scala
 buildSystem: maven
 pipelines:
-  pipelines/SQLOperators:
-    name: SQLOperators
+  pipelines/GeneralTests:
+    name: GeneralTests
     description: ''
     author: nimbus@simpledatalabs.com
     mode: batch
     language: scala
-    createdAt: '2022-08-05 20:51:53'
+    createdAt: '2022-08-05 21:02:11'
     datasets:
       inputs:
       - 2678/datasets/tpch-customer
+      - 2678/datasets/ebcdic_example
+      - 2678/datasets/parquet-example
       outputs:
-      - 2678/datasets/tpch-sql-examples
-      - 2678/datasets/aggregate-examples
-      - 2678/datasets/row-number-example
-      - 2678/datasets/select-distinct-example
+      - 2678/datasets/validation-rules-output
+      - 2678/datasets/validated_rows
+      - 2678/datasets/dedupe-first
+      - 2678/datasets/dedupe-last
+      - 2678/datasets/ebcdic_example
+      - 2678/datasets/parquet-example
+      - 2678/datasets/intersect_example
+    dependencies: {}
+  pipelines/scd1_merge:
+    name: scd1_merge
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-06 00:10:56'
+    datasets:
+      inputs:
+      - 2678/datasets/customers-raw
+      outputs: []
+    dependencies: {}
+  pipelines/HeadersAndFooters:
+    name: HeadersAndFooters
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-07 22:32:30'
+    datasets:
+      inputs:
+      - 2678/datasets/header_footer_stripped_csv
+      - 2678/datasets/customers-text
+      outputs:
+      - 2678/datasets/concatenated_output
+      - 2678/datasets/footer_line
+      - 2678/datasets/header_line
     dependencies: {}
   pipelines/OperatorsAndGems:
     name: OperatorsAndGems
@@ -39,23 +72,21 @@ pipelines:
       - 2678/datasets/us-uk-union-example
       - 2678/datasets/us-uk-outer-join-example
     dependencies: {}
-  pipelines/GeneralTests:
-    name: GeneralTests
+  pipelines/SQLOperators:
+    name: SQLOperators
     description: ''
     author: nimbus@simpledatalabs.com
     mode: batch
     language: scala
-    createdAt: '2022-08-05 21:02:11'
+    createdAt: '2022-08-05 20:51:53'
     datasets:
       inputs:
       - 2678/datasets/tpch-customer
-      - 2678/datasets/ebcdic_example
       outputs:
-      - 2678/datasets/validation-rules-output
-      - 2678/datasets/validated_rows
-      - 2678/datasets/dedupe-first
-      - 2678/datasets/dedupe-last
-      - 2678/datasets/ebcdic_example
+      - 2678/datasets/tpch-sql-examples
+      - 2678/datasets/aggregate-examples
+      - 2678/datasets/row-number-example
+      - 2678/datasets/select-distinct-example
     dependencies: {}
 datasets:
   datasets/order-by-example:
@@ -82,18 +113,6 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 22:43:51'
-  datasets/us-uk-union-example:
-    name: us-uk-union-example
-    description: ''
-    author: nimbus@simpledatalabs.com
-    createdAt: '2022-08-05 21:42:41'
-    physicalDatasets:
-      dev:
-        fabricId: 51
-        datasetType: File
-        description: ''
-        author: nimbus@simpledatalabs.com
-        createdAt: '2022-08-05 21:42:41'
   datasets/dedupe-first:
     name: dedupe-first
     description: ''
@@ -118,6 +137,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 21:45:31'
+  datasets/parquet-example:
+    name: parquet-example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-06 00:04:23'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-06 00:04:23'
   datasets/row-number-example:
     name: row-number-example
     description: ''
@@ -154,6 +185,42 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 21:06:06'
+  datasets/customers-raw:
+    name: customers-raw
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-06 00:13:38'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-06 00:13:38'
+  datasets/us-uk-union-example:
+    name: us-uk-union-example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 21:42:41'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 21:42:41'
+  datasets/customers-text:
+    name: customers-text
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-07 23:43:02'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-07 23:43:02'
   datasets/aggregate-examples:
     name: aggregate-examples
     description: ''
@@ -178,6 +245,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 22:45:39'
+  datasets/concatenated_output:
+    name: concatenated_output
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-07 23:11:26'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-07 23:11:26'
   datasets/validation-rules-output:
     name: validation-rules-output
     description: ''
@@ -202,6 +281,54 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 23:42:01'
+  datasets/intersect_example:
+    name: intersect_example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-06 00:06:05'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-06 00:06:05'
+  datasets/footer_line:
+    name: footer_line
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-07 22:42:57'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-07 22:42:57'
+  datasets/header_line:
+    name: header_line
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-07 22:42:15'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-07 22:42:15'
+  datasets/header_footer_stripped_csv:
+    name: header_footer_stripped_csv
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-07 23:55:26'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-07 23:55:26'
   datasets/tpch-orders:
     name: tpch-orders
     description: ''

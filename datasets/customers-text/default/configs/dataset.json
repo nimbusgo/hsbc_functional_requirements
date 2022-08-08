@@ -1,0 +1,1 @@
+{"format":"text","path":"dbfs:/databricks-datasets/retail-org/customers/customers.csv","writeMode":null,"compression":null,"wholetext":null,"partitionColumns":null,"schema":{"type":"struct","fields":[{"name":"value","type":"string","nullable":true,"metadata":{}}]},"lineSep":null,"pgpEncrypted":null,"datasetType":"File","useSchema":true}

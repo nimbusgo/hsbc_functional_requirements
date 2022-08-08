@@ -5,6 +5,20 @@ author: nimbus@simpledatalabs.com
 language: scala
 buildSystem: maven
 pipelines:
+  pipelines/scd2_merge:
+    name: scd2_merge
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-08 03:21:44'
+    datasets:
+      inputs:
+      - 2678/datasets/customers-raw
+      - 2678/datasets/customers-scd2
+      outputs:
+      - 2678/datasets/customers-scd2
+    dependencies: {}
   pipelines/GeneralTests:
     name: GeneralTests
     description: ''
@@ -175,6 +189,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-08 03:18:11'
+  datasets/customers-scd2:
+    name: customers-scd2
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-08 03:24:03'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-08 03:24:03'
   datasets/tpch-part:
     name: tpch-part
     description: ''

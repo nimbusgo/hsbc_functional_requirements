@@ -1,0 +1,40 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: customer_id
+    type: integer
+    nullable: true
+    metadata: {}
+  - name: tax_id
+    type: double
+    nullable: true
+    metadata: {}
+  - name: tax_code
+    type: string
+    nullable: true
+    metadata: {}
+  - name: customer_name
+    type: string
+    nullable: true
+    metadata: {}
+  - name: state
+    type: string
+    nullable: true
+    metadata: {}
+  - name: from_time
+    type: timestamp
+    nullable: false
+    metadata: {}
+  - name: end_time
+    type: timestamp
+    nullable: true
+    metadata: {}
+  - name: is_current
+    type: boolean
+    nullable: false
+    metadata: {}
+  - name: is_old_value
+    type: boolean
+    nullable: false
+    metadata: {}

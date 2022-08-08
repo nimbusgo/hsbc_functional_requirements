@@ -39,6 +39,7 @@ pipelines:
       - 2678/datasets/ebcdic_example
       - 2678/datasets/parquet-example
       - 2678/datasets/intersect_example
+      - 2678/datasets/config_based_ouput
     dependencies: {}
   pipelines/scd1_merge:
     name: scd1_merge
@@ -87,6 +88,8 @@ pipelines:
       - 2678/datasets/order-by-example
       - 2678/datasets/us-uk-union-example
       - 2678/datasets/us-uk-outer-join-example
+      - 2678/datasets/group-by-brand
+      - 2678/datasets/us-uk-inner-join-example
     dependencies: {}
   pipelines/SQLOperators:
     name: SQLOperators
@@ -201,18 +204,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-08 03:24:03'
-  datasets/tpch-part:
-    name: tpch-part
+  datasets/group-by-brand:
+    name: group-by-brand
     description: ''
     author: nimbus@simpledatalabs.com
-    createdAt: '2022-08-05 21:17:29'
+    createdAt: '2022-08-08 03:32:07'
     physicalDatasets:
       dev:
         fabricId: 51
         datasetType: File
         description: ''
         author: nimbus@simpledatalabs.com
-        createdAt: '2022-08-05 21:17:29'
+        createdAt: '2022-08-08 03:32:07'
   datasets/tpch-nation:
     name: tpch-nation
     description: ''
@@ -393,6 +396,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 20:54:44'
+  datasets/config_based_ouput:
+    name: config_based_ouput
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-08 04:09:47'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-08 04:09:47'
   datasets/tpch-customer:
     name: tpch-customer
     description: ''
@@ -417,6 +432,30 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 20:58:18'
+  datasets/tpch-part:
+    name: tpch-part
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 21:17:29'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 21:17:29'
+  datasets/us-uk-inner-join-example:
+    name: us-uk-inner-join-example
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-08 03:38:34'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-08 03:38:34'
 templates: {}
 jobs: {}
 libraries: []
@@ -433,4 +472,4 @@ subgraphs:
     author: nimbus@simpledatalabs.com
     language: scala
     createdAt: '2022-08-08 03:21:05'
-dependencies: '[]'
+dependencies: []

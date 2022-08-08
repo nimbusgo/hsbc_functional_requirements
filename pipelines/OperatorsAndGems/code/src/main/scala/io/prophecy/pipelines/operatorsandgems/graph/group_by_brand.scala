@@ -1,20 +1,20 @@
-package io.prophecy.pipelines.generaltests.graph
+package io.prophecy.pipelines.operatorsandgems.graph
 
 import io.prophecy.libs._
-import io.prophecy.pipelines.generaltests.config.ConfigStore._
+import io.prophecy.pipelines.operatorsandgems.config.ConfigStore._
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object dedupe_last {
+object group_by_brand {
 
   def apply(spark: SparkSession, in: DataFrame): Unit = {
     import _root_.io.delta.tables._
     in.write
       .format("delta")
       .mode("overwrite")
-      .save(s"${Config.base_path}/dedupe-last")
+      .save("/data/tmp/hsbc/tpch-examples/group-by-brand")
   }
 
 }

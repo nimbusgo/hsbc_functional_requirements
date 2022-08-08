@@ -1,4 +1,4 @@
-package io.prophecy.pipelines.operatorsandgems.graph.FilterUK_US_1
+package io.prophecy.pipelines.operatorsandgems.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.operatorsandgems.config.ConfigStore._
@@ -9,9 +9,11 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object FilterUK_1 {
+object FilterUK_US_2 {
 
-  def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.filter(col("nation_name") === lit("UNITED KINGDOM"))
+  def apply(spark: SparkSession, in: DataFrame): (DataFrame, DataFrame) =
+    (in.filter(col("nation_name") === lit("UNITED KINGDOM")),
+     in.filter(col("nation_name") === lit("UNITED STATES"))
+    )
 
 }

@@ -1,4 +1,4 @@
-package io.prophecy.pipelines.operatorsandgems.graph.FilterUK_US_2
+package io.prophecy.pipelines.operatorsandgems.graph
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.operatorsandgems.config.ConfigStore._
@@ -9,9 +9,16 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object FilterUS_1 {
+object AggregateByBrand {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.filter(col("nation_name") === lit("UNITED STATES"))
+    in.groupBy(col("p_brand"))
+      .agg(
+        min(col("p_retailprice")).as("min_price"),
+        max(col("p_retailprice")).as("max_price"),
+        count(col("p_partkey")).as("num_parts"),
+        avg(col("p_retailprice")).as("avg_price"),
+        sum(col("p_retailprice")).as("price_sum")
+      )
 
 }

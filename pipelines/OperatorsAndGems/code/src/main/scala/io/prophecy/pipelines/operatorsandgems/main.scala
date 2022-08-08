@@ -6,8 +6,6 @@ import io.prophecy.pipelines.operatorsandgems.config._
 import io.prophecy.pipelines.operatorsandgems.udfs.UDFs._
 import io.prophecy.pipelines.operatorsandgems.udfs._
 import io.prophecy.pipelines.operatorsandgems.graph._
-import io.prophecy.pipelines.operatorsandgems.graph.FilterUK_US_2
-import io.prophecy.pipelines.operatorsandgems.graph.FilterUK_US_1
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -22,21 +20,25 @@ object Main {
     val df_AggByCustomer = AggByCustomer(spark, df_tpch_orders)
     val df_tpch_customer = tpch_customer(spark)
     val df_WithNtnName   = WithNtnName(spark,   df_tpch_customer)
-    val (df_FilterUK_US_2_out0, df_FilterUK_US_2_out1) =
-      FilterUK_US_2.apply(spark, df_WithNtnName)
-    val df_Union       = Union(spark,       df_FilterUK_US_2_out0, df_FilterUK_US_2_out1)
-    val df_RightJoin   = RightJoin(spark,   df_AggByCustomer,      df_Union)
-    val df_tpch_part   = tpch_part(spark)
-    val df_Aggregate_1 = Aggregate_1(spark, df_tpch_part)
     val (df_FilterUK_US_1_out0, df_FilterUK_US_1_out1) =
-      FilterUK_US_1.apply(spark, df_WithNtnName)
+      FilterUK_US_1(spark, df_WithNtnName)
+    val df_Union     = Union(spark,     df_FilterUK_US_1_out0, df_FilterUK_US_1_out1)
+    val df_RightJoin = RightJoin(spark, df_AggByCustomer,      df_Union)
+    val (df_FilterUK_US_2_out0, df_FilterUK_US_2_out1) =
+      FilterUK_US_2(spark, df_WithNtnName)
+    val df_tpch_part        = tpch_part(spark)
+    val df_AggregateByBrand = AggregateByBrand(spark, df_tpch_part)
+    val df_InnerJoin =
+      InnerJoin(spark,              df_FilterUK_US_2_out0, df_FilterUK_US_2_out1)
+    us_uk_inner_join_example(spark, df_InnerJoin)
     val df_OrderByBrandPrice = OrderByBrandPrice(spark, df_tpch_part)
     val df_LeftJoin          = LeftJoin(spark,          df_Union,     df_AggByCustomer)
     val df_Intersection      = Intersection(spark,      df_RightJoin, df_LeftJoin)
     order_by_example(spark, df_OrderByBrandPrice)
     val df_FullOuterJoin =
-      FullOuterJoin(spark,          df_FilterUK_US_1_out0, df_FilterUK_US_1_out1)
+      FullOuterJoin(spark,          df_FilterUK_US_2_out0, df_FilterUK_US_2_out1)
     us_uk_outer_join_example(spark, df_FullOuterJoin)
+    group_by_brand(spark,           df_AggregateByBrand)
     us_uk_union_example(spark,      df_Intersection)
   }
 

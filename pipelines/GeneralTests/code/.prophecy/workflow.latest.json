@@ -16,7 +16,21 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "base_path",
+          "kind" : {
+            "type" : "string",
+            "value" : "/data/tmp/hsbc/tpch-examples/"
+          },
+          "optional" : false
+        }, {
+          "name" : "flag",
+          "kind" : {
+            "type" : "string",
+            "value" : "upper"
+          },
+          "optional" : false
+        } ]
       },
       "fabrics" : {
         "dev" : {
@@ -160,6 +174,18 @@
     "sourcePort" : "E_2lDv1Ydj_uG0KvQQ3sT$$avHS3LZpt1TEF_ShMjgeu",
     "target" : "yylCktXThpkRjvO4LnAm0$$ZSxeTsD_AsTChZwcKG4-Q",
     "targetPort" : "PoQHcP1McJej-ow7V0nvw$$XVS-svkxQ39tywulpASDZ"
+  }, {
+    "id" : "hNWZEu69ZmacHqs73kaRa",
+    "source" : "XTKfNMujN2cFMRQjz8XMH$$MhQ1vFV2hOiqHb-94JMBZ",
+    "sourcePort" : "E_2lDv1Ydj_uG0KvQQ3sT$$avHS3LZpt1TEF_ShMjgeu",
+    "target" : "4ZDlX9E_HlFOekwKNP6W4$$QG5DiXF54yjTwhcbIZDGS",
+    "targetPort" : "A5XwrZzSVxTJsfQIFrwIj$$YIfmHa941K5S-4n7J3OPE"
+  }, {
+    "id" : "Y4ZhbdLavBnDyC9zUojeW",
+    "source" : "4ZDlX9E_HlFOekwKNP6W4$$QG5DiXF54yjTwhcbIZDGS",
+    "sourcePort" : "4lECetl5kLOn1JXZWf-to$$D2JVmTsClu0WS5M5IDPSQ",
+    "target" : "yJPybibeE6WQtGKyWFbN_$$k7nOaFvHJvTy_7zvbqLpy",
+    "targetPort" : "10sOD5qCk-UCL1m5J14-S$$gqKAIW69y81m-re2qFXpW"
   } ],
   "processes" : {
     "nTNh3rugwwknHZDBMKOIE$$P4_yfUR6fYGZFFcDBkaH9" : {
@@ -168,8 +194,8 @@
       "metadata" : {
         "label" : "parquet-example_1",
         "slug" : "parquet_example_1",
-        "x" : 108.19999999999999,
-        "y" : 1187.1666666666665,
+        "x" : 119.19999999999999,
+        "y" : 1186.1666666666665,
         "phase" : 1,
         "cache" : false,
         "detailedStats" : false,
@@ -194,7 +220,7 @@
       "metadata" : {
         "label" : "validation-rules-output",
         "slug" : "validation_rules_output",
-        "x" : 719.0007735229951,
+        "x" : 731.0007735229951,
         "y" : 710,
         "phase" : 0,
         "cache" : false,
@@ -326,6 +352,52 @@
         "datasetId" : "2678/datasets/ebcdic_example"
       }
     },
+    "4ZDlX9E_HlFOekwKNP6W4$$QG5DiXF54yjTwhcbIZDGS" : {
+      "id" : "4ZDlX9E_HlFOekwKNP6W4$$QG5DiXF54yjTwhcbIZDGS",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : 544.9000743561409,
+        "y" : 1281.3666666666668,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "A5XwrZzSVxTJsfQIFrwIj$$YIfmHa941K5S-4n7J3OPE",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "4lECetl5kLOn1JXZWf-to$$D2JVmTsClu0WS5M5IDPSQ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "transformations" : [ {
+          "kind" : "AddReplaceColumn",
+          "AddReplaceColumn" : {
+            "sourceColumn" : "c_name",
+            "expression" : {
+              "format" : "sql",
+              "expression" : "case when '$flag' = 'upper' then upper(c_name) else c_name end"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : ""
+          },
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          }
+        } ]
+      }
+    },
     "-2068k1ED-k7B_K0Ckzd1$$PzVRluzDYcFOocaR07MyC" : {
       "id" : "-2068k1ED-k7B_K0Ckzd1$$PzVRluzDYcFOocaR07MyC",
       "component" : "Target",
@@ -382,6 +454,32 @@
       },
       "properties" : {
         "operationType" : "unionAll"
+      }
+    },
+    "yJPybibeE6WQtGKyWFbN_$$k7nOaFvHJvTy_7zvbqLpy" : {
+      "id" : "yJPybibeE6WQtGKyWFbN_$$k7nOaFvHJvTy_7zvbqLpy",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "config_based_ouput",
+        "slug" : "config_based_ouput",
+        "x" : 700.733395296784,
+        "y" : 1285.6,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "10sOD5qCk-UCL1m5J14-S$$gqKAIW69y81m-re2qFXpW",
+          "slug" : "in"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "2678/datasets/config_based_ouput"
       }
     },
     "9InVk4tXfOOq06f5aUtDn$$HbEu45_yCUxVIlL83b_kf" : {
@@ -803,8 +901,8 @@
       "metadata" : {
         "label" : "intersect_example",
         "slug" : "intersect_example",
-        "x" : 658.2,
-        "y" : 1124.9666666666665,
+        "x" : 660.2,
+        "y" : 1113.9666666666665,
         "phase" : 1,
         "cache" : false,
         "detailedStats" : false,

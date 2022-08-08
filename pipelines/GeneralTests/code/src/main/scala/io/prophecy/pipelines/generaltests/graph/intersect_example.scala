@@ -12,6 +12,7 @@ object intersect_example {
   def apply(spark: SparkSession, in: DataFrame): Unit =
     in.write
       .format("parquet")
+      .mode("overwrite")
       .save("/data/tmp/hsbc/tpch-examples/intersect_example")
 
 }

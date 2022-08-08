@@ -14,7 +14,7 @@ object dedupe_first {
     in.write
       .format("delta")
       .mode("overwrite")
-      .save("/data/tmp/hsbc/tpch-examples/dedupe-first")
+      .save(s"${Config.base_path}/dedupe-first")
   }
 
 }

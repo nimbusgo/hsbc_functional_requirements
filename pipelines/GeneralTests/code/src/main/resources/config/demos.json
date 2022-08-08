@@ -1,3 +1,5 @@
 {
-  "fabricName" : "demos"
+  "fabricName" : "demos",
+  "base_path" : "/data/tmp/hsbc/tpch-examples/",
+  "flag" : "upper"
 }

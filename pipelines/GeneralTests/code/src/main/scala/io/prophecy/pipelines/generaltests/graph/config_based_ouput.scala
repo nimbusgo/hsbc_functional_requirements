@@ -7,14 +7,14 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object dedupe_last {
+object config_based_ouput {
 
   def apply(spark: SparkSession, in: DataFrame): Unit = {
     import _root_.io.delta.tables._
     in.write
       .format("delta")
       .mode("overwrite")
-      .save(s"${Config.base_path}/dedupe-last")
+      .save(s"${Config.base_path}/config_based_ouput")
   }
 
 }

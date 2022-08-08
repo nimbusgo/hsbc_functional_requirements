@@ -17,15 +17,15 @@ object customers_scd2_write {
       )
     ) {
       val updatesDF = in
-        .withColumn("is_current",   lit("true"))
         .withColumn("is_old_value", lit("true"))
+        .withColumn("is_current",   lit("true"))
       val existingTable: DeltaTable =
         DeltaTable.forPath(spark, "/data/tmp/hsbc/tpch-examples/scd2_customers")
       val existingDF: DataFrame = existingTable.toDF
       val stagedUpdatesDF = updatesDF
         .join(existingDF, List("customer_id"))
         .where(
-          existingDF.col("is_old_value") === lit("true") && List(
+          existingDF.col("is_current") === lit("true") && List(
             existingDF.col("tax_id") =!= updatesDF.col("tax_id"),
             existingDF.col("tax_code") =!= updatesDF.col("tax_code"),
             existingDF.col("customer_name") =!= updatesDF.col("customer_name"),
@@ -33,7 +33,7 @@ object customers_scd2_write {
           ).reduce((c1, c2) => c1 || c2)
         )
         .select(updatesDF.columns.map(x => updatesDF.col(x)): _*)
-        .withColumn("is_current",               lit("false"))
+        .withColumn("is_old_value",             lit("false"))
         .withColumn("mergeKey",                 lit(null))
         .union(updatesDF.withColumn("mergeKey", concat(col("customer_id"))))
       existingTable
@@ -43,7 +43,7 @@ object customers_scd2_write {
           concat(existingDF.col("customer_id")) === stagedUpdatesDF("mergeKey")
         )
         .whenMatched(
-          existingDF.col("is_old_value") === lit("true") && List(
+          existingDF.col("is_current") === lit("true") && List(
             existingDF.col("tax_id") =!= stagedUpdatesDF.col("tax_id"),
             existingDF.col("tax_code") =!= stagedUpdatesDF.col("tax_code"),
             existingDF.col("customer_name") =!= stagedUpdatesDF
@@ -52,7 +52,7 @@ object customers_scd2_write {
           ).reduce((c1, c2) => c1 || c2)
         )
         .updateExpr(
-          Map("is_old_value" → "false", "end_time" → "staged_updates.from_time")
+          Map("is_current" → "false", "end_time" → "staged_updates.from_time")
         )
         .whenNotMatched()
         .insertAll()

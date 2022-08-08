@@ -326,7 +326,7 @@
           "target" : "try_cast_date_failure",
           "expression" : {
             "format" : "sql",
-            "expression" : "cast('1234' as date)"
+            "expression" : "cast('abc' as date)"
           },
           "description" : ""
         }, {
@@ -361,7 +361,7 @@
           "target" : "julian_date_convert",
           "expression" : {
             "format" : "sql",
-            "expression" : "to_date('20015', \"yyDDD\")"
+            "expression" : "to_date('20215', \"yyDDD\")"
           },
           "description" : ""
         }, {

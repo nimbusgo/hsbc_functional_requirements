@@ -16,9 +16,8 @@ object Main {
 
   def apply(spark: SparkSession): Unit = {
     val df_GenerateRandomIncrements_0 = GenerateRandomIncrements_0.apply(spark)
-    val df_SchemaTransform_1 =
-      SchemaTransform_1(spark,  df_GenerateRandomIncrements_0)
-    customers_scd2_write(spark, df_SchemaTransform_1)
+    val df_AddScd2Fields              = AddScd2Fields(spark, df_GenerateRandomIncrements_0)
+    customers_scd2_write(spark, df_AddScd2Fields)
     val df_customers_scd2 = customers_scd2(spark)
     val df_Identity       = Identity(spark, df_customers_scd2)
   }

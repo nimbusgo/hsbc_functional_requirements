@@ -700,8 +700,8 @@
       "id" : "sowouCVIZBQb0qe0RcKSp$$x1-aB7NsyXid-w0V-vADW",
       "component" : "SchemaTransform",
       "metadata" : {
-        "label" : "SchemaTransform_1",
-        "slug" : "SchemaTransform_1",
+        "label" : "AddScd2Fields",
+        "slug" : "AddScd2Fields",
         "x" : 320.00040237256013,
         "y" : 120,
         "phase" : 0,

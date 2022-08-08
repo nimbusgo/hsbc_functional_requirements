@@ -18,14 +18,14 @@ object SqlExpressionChecks {
       lit("1.5").cast(FloatType).as("try_cast_float_success"),
       lit("abc").cast(FloatType).as("try_cast_float_failure"),
       lit("2020-01-01").cast(DateType).as("try_cast_date_success"),
-      lit("1234").cast(DateType).as("try_cast_date_failure"),
+      lit("abc").cast(DateType).as("try_cast_date_failure"),
       format_number(lit(1.246d),  2).as("format_check"),
       date_format(current_date(), "yyyy/MM/dd").as("date_convert_format"),
       to_timestamp(lit(java.time.LocalDate.parse("1970-01-01")))
         .as("date_convert_timestamp"),
       unix_timestamp(lit(java.time.LocalDate.parse("1970-01-02")))
         .as("date_convert_unix_timestamp"),
-      to_date(lit("20015"), "yyDDD").as("julian_date_convert"),
+      to_date(lit("20215"), "yyDDD").as("julian_date_convert"),
       coalesce(lit(null),   col("c_phone"), lit("123")).as("coalesce_check"),
       lit("abc").isNull.as("isnull_check"),
       lit("abc").isNotNull.as("isnotnull_check"),

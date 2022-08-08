@@ -1,4 +1,4 @@
-package io.prophecy.pipelines.scdmerge.graph.Subgraph_0
+package io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scdmerge.config.ConfigStore._
@@ -9,15 +9,13 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object Split3 {
+object Union {
 
   def apply(
     spark: SparkSession,
-    in:    DataFrame
-  ): (DataFrame, DataFrame, DataFrame) =
-    (in.filter(col("random_id") === lit(0)),
-     in.filter(col("random_id") === lit(1)),
-     in.filter(col("random_id") === lit(2))
-    )
+    in0:   DataFrame,
+    in1:   DataFrame,
+    in2:   DataFrame
+  ): DataFrame = in0.unionAll(in1).unionAll(in2)
 
 }

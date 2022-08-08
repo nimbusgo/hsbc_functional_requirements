@@ -6,7 +6,7 @@ import io.prophecy.pipelines.scdmerge.config._
 import io.prophecy.pipelines.scdmerge.udfs.UDFs._
 import io.prophecy.pipelines.scdmerge.udfs._
 import io.prophecy.pipelines.scdmerge.graph._
-import io.prophecy.pipelines.scdmerge.graph.Subgraph_0
+import io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
@@ -15,8 +15,10 @@ import org.apache.spark.sql.types._
 object Main {
 
   def apply(spark: SparkSession): Unit = {
-    Target_1(spark)
-    val df_Subgraph_0 = Subgraph_0.apply(spark)
+    val df_GenerateRandomIncrements = GenerateRandomIncrements.apply(spark)
+    customers_scd1_write(spark, df_GenerateRandomIncrements)
+    val df_customers_scd1 = customers_scd1(spark)
+    val df_Identity       = Identity(spark, df_customers_scd1)
   }
 
   def main(args: Array[String]): Unit = {

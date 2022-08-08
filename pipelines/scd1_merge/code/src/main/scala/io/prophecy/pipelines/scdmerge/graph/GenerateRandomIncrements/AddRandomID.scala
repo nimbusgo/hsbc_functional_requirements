@@ -1,4 +1,4 @@
-package io.prophecy.pipelines.scdmerge.graph.Subgraph_0
+package io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scdmerge.config.ConfigStore._
@@ -9,11 +9,9 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 
-object shift_ids {
+object AddRandomID {
 
   def apply(spark: SparkSession, in: DataFrame): DataFrame =
-    in.withColumn("customer_id",
-                  col("customer_id") + (lit(10000) * rand()).cast(IntegerType)
-    )
+    in.withColumn("random_id", floor(lit(3) * rand()))
 
 }

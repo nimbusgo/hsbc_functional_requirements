@@ -5,7 +5,7 @@ import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
-package object Subgraph_0 {
+package object GenerateRandomIncrements {
 
   def apply(spark: SparkSession): DataFrame = {
     val df_customers_raw    = customers_raw(spark)

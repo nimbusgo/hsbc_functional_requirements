@@ -36,7 +36,9 @@ pipelines:
     datasets:
       inputs:
       - 2678/datasets/customers-raw
-      outputs: []
+      - 2678/datasets/customers-scd1
+      outputs:
+      - 2678/datasets/customers-scd1
     dependencies: {}
   pipelines/HeadersAndFooters:
     name: HeadersAndFooters
@@ -161,6 +163,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 20:57:46'
+  datasets/customers-scd1:
+    name: customers-scd1
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-08 03:18:11'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-08 03:18:11'
   datasets/tpch-part:
     name: tpch-part
     description: ''
@@ -387,4 +401,10 @@ subgraphs:
     author: nimbus@simpledatalabs.com
     language: scala
     createdAt: '2022-08-05 21:49:25'
+  subgraphs/GenerateRandomIncrements:
+    name: GenerateRandomIncrements
+    description: ''
+    author: nimbus@simpledatalabs.com
+    language: scala
+    createdAt: '2022-08-08 03:21:05'
 dependencies: '[]'

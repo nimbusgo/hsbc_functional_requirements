@@ -52,16 +52,54 @@
     },
     "topLevelPackage" : "io.prophecy.pipelines.scdmerge"
   },
-  "connections" : [ ],
+  "connections" : [ {
+    "id" : "MKpNDNA6mUwAcTJAfIbVw",
+    "source" : "eWIdee1UtnlcLmZotrJKC$$T_WidXTj9542Qq-vYKz_U",
+    "sourcePort" : "inRFkgrz4c4H9eecMztgu$$yFq1t7c_I-6NmSBkS3xSk",
+    "target" : "6DyZWdSs3PMmOrH3Hn36w$$W0fjVzGwliB442IHhupR9",
+    "targetPort" : "GaVouAfB_5UDw_sK_p3OS$$_7-J6Dy9lh7AiP1A5rdlR"
+  }, {
+    "id" : "sLosXUdU8_mJK0kG2iFVF",
+    "source" : "zOPMgMbrAf8U6rsZYDL0f$$HxlFgsvqFXubn6vRPxKmT",
+    "sourcePort" : "HWLHIGWLx0YDLI2kJIqjd$$EXQAxzQyutaguJZkwZKsl",
+    "target" : "W6AsL82fb3ImaTZUrnhxJ$$BDUEmH7-OeHXdeG-1Ev_B",
+    "targetPort" : "rREElDXadmJtCe4cRgvAm$$a3DSUuJA8gqi7l_LLluX7"
+  } ],
   "processes" : {
+    "zOPMgMbrAf8U6rsZYDL0f$$HxlFgsvqFXubn6vRPxKmT" : {
+      "id" : "zOPMgMbrAf8U6rsZYDL0f$$HxlFgsvqFXubn6vRPxKmT",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "customers-scd1",
+        "slug" : "customers_scd1",
+        "x" : 120.00089425895214,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "HWLHIGWLx0YDLI2kJIqjd$$EXQAxzQyutaguJZkwZKsl",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "2678/datasets/customers-scd1"
+      }
+    },
     "6DyZWdSs3PMmOrH3Hn36w$$W0fjVzGwliB442IHhupR9" : {
       "id" : "6DyZWdSs3PMmOrH3Hn36w$$W0fjVzGwliB442IHhupR9",
       "component" : "Target",
       "metadata" : {
-        "label" : "Target_1",
-        "slug" : "Target_1",
-        "x" : 779.7666666666668,
-        "y" : 268.43333333333334,
+        "label" : "customers-scd1_write",
+        "slug" : "customers_scd1_write",
+        "x" : 320.0009463032894,
+        "y" : 120,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -76,16 +114,18 @@
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
-      "properties" : { }
+      "properties" : {
+        "datasetId" : "2678/datasets/customers-scd1"
+      }
     },
     "eWIdee1UtnlcLmZotrJKC$$T_WidXTj9542Qq-vYKz_U" : {
       "id" : "eWIdee1UtnlcLmZotrJKC$$T_WidXTj9542Qq-vYKz_U",
       "component" : "Subgraph",
       "metadata" : {
-        "label" : "Subgraph_0",
-        "slug" : "Subgraph_0",
-        "x" : 541,
-        "y" : 275,
+        "label" : "GenerateRandomIncrements",
+        "slug" : "GenerateRandomIncrements",
+        "x" : 120.00005353616554,
+        "y" : 120,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -100,7 +140,11 @@
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
       },
-      "properties" : { },
+      "properties" : {
+        "externalId" : "2678/subgraphs/GenerateRandomIncrements",
+        "name" : "GenerateRandomIncrements",
+        "packageName" : "data"
+      },
       "connections" : [ {
         "id" : "vi9QejNfwltEJYN6Wcv8P",
         "source" : "wz0WSdJx7ONOTZ_4usnU2$$bxSHct4y0UnWtSrOYfQ3T",
@@ -610,6 +654,39 @@
             "orders" : [ ],
             "useOrderBy" : false
           }
+        }
+      }
+    },
+    "W6AsL82fb3ImaTZUrnhxJ$$BDUEmH7-OeHXdeG-1Ev_B" : {
+      "id" : "W6AsL82fb3ImaTZUrnhxJ$$BDUEmH7-OeHXdeG-1Ev_B",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Identity",
+        "slug" : "Identity",
+        "x" : 320.0002442965671,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rREElDXadmJtCe4cRgvAm$$a3DSUuJA8gqi7l_LLluX7",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "NRnbF9wXJovCqABpPWcz8$$n6JbCC2ogBMA9M8GEuloc",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "true"
         }
       }
     }

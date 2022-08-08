@@ -1,4 +1,4 @@
-package io.prophecy.pipelines.scdmerge.graph.Subgraph_0
+package io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements
 
 import io.prophecy.libs._
 import io.prophecy.pipelines.scdmerge.config.ConfigStore._

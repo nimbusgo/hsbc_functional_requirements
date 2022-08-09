@@ -1,6 +1,6 @@
 name: hsbc_functional_requirements
 description: ''
-version: 0.0.1
+version: '0.5'
 author: nimbus@simpledatalabs.com
 language: scala
 buildSystem: maven

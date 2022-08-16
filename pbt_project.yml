@@ -55,6 +55,20 @@ pipelines:
       outputs:
       - 2678/datasets/customers-scd1
     dependencies: {}
+  pipelines/parquet_scd1:
+    name: parquet_scd1
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-15 20:53:18'
+    datasets:
+      inputs:
+      - 2678/datasets/customers-raw
+      - 2678/datasets/scd1_customers_parquet
+      outputs:
+      - 2678/datasets/scd1_customers_parquet
+    dependencies: {}
   pipelines/HeadersAndFooters:
     name: HeadersAndFooters
     description: ''
@@ -90,6 +104,20 @@ pipelines:
       - 2678/datasets/us-uk-outer-join-example
       - 2678/datasets/group-by-brand
       - 2678/datasets/us-uk-inner-join-example
+    dependencies: {}
+  pipelines/parquet_scd2:
+    name: parquet_scd2
+    description: ''
+    author: nimbus@simpledatalabs.com
+    mode: batch
+    language: scala
+    createdAt: '2022-08-15 21:32:40'
+    datasets:
+      inputs:
+      - 2678/datasets/customers-raw
+      - 2678/datasets/scd2_customers_parquet
+      outputs:
+      - 2678/datasets/scd2_customers_parquet
     dependencies: {}
   pipelines/SQLOperators:
     name: SQLOperators
@@ -132,18 +160,6 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 22:43:51'
-  datasets/dedupe-first:
-    name: dedupe-first
-    description: ''
-    author: nimbus@simpledatalabs.com
-    createdAt: '2022-08-05 22:44:54'
-    physicalDatasets:
-      dev:
-        fabricId: 51
-        datasetType: File
-        description: ''
-        author: nimbus@simpledatalabs.com
-        createdAt: '2022-08-05 22:44:54'
   datasets/us-uk-outer-join-example:
     name: us-uk-outer-join-example
     description: ''
@@ -228,6 +244,18 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-05 21:06:06'
+  datasets/scd1_customers_parquet:
+    name: scd1_customers_parquet
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-15 21:15:15'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-15 21:15:15'
   datasets/customers-raw:
     name: customers-raw
     description: ''
@@ -264,6 +292,30 @@ datasets:
         description: ''
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-07 23:43:02'
+  datasets/scd2_customers_parquet:
+    name: scd2_customers_parquet
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-15 21:34:34'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-15 21:34:34'
+  datasets/dedupe-first:
+    name: dedupe-first
+    description: ''
+    author: nimbus@simpledatalabs.com
+    createdAt: '2022-08-05 22:44:54'
+    physicalDatasets:
+      dev:
+        fabricId: 51
+        datasetType: File
+        description: ''
+        author: nimbus@simpledatalabs.com
+        createdAt: '2022-08-05 22:44:54'
   datasets/aggregate-examples:
     name: aggregate-examples
     description: ''

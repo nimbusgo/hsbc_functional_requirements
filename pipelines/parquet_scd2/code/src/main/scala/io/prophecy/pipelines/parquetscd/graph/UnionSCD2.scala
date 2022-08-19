@@ -15,7 +15,8 @@ object UnionSCD2 {
     spark: SparkSession,
     in0:   DataFrame,
     in1:   DataFrame,
-    in2:   DataFrame
-  ): DataFrame = in0.unionAll(in1).unionAll(in2)
+    in2:   DataFrame,
+    in3:   DataFrame
+  ): DataFrame = in0.unionAll(in1).unionAll(in2).unionAll(in3)
 
 }

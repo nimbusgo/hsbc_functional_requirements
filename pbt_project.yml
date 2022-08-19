@@ -50,8 +50,8 @@ pipelines:
     createdAt: '2022-08-06 00:10:56'
     datasets:
       inputs:
-      - 2678/datasets/customers-raw
       - 2678/datasets/customers-scd1
+      - 2678/datasets/customers-raw
       outputs:
       - 2678/datasets/customers-scd1
     dependencies: {}
@@ -114,8 +114,8 @@ pipelines:
     createdAt: '2022-08-15 21:32:40'
     datasets:
       inputs:
-      - 2678/datasets/customers-raw
       - 2678/datasets/scd2_customers_parquet
+      - 2678/datasets/customers-raw
       outputs:
       - 2678/datasets/scd2_customers_parquet
     dependencies: {}
@@ -509,7 +509,30 @@ datasets:
         author: nimbus@simpledatalabs.com
         createdAt: '2022-08-08 03:38:34'
 templates: {}
-jobs: {}
+jobs:
+  jobs/operators_and_gems_sched_1:
+    name: operators_and_gems_sched_1
+    description: ''
+    fabricUID: 51
+    scheduler:
+      Databricks: {}
+    jobSize: Small
+    scheduleCron: 0 0 0 * * ? *
+    timeout: null
+    alerting:
+      emails: nimbus@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines:
+    - 2678/pipelines/OperatorsAndGems
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2022-08-17 15:06:48'
+    author: nimbus@simpledatalabs.com
 libraries: []
 subgraphs:
   subgraphs/FilterUK_US:

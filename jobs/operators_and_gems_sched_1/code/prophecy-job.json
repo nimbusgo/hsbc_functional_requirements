@@ -1,0 +1,83 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "51",
+    "jobId" : "2678/jobs/operators_and_gems_sched_1",
+    "name" : "operators_and_gems_sched_1",
+    "schedule" : "0 0 0 * * ? *",
+    "enabled" : false,
+    "defaultClusterSize" : "Small",
+    "alerting" : {
+      "emails" : "nimbus@prophecy.io",
+      "onStart" : false,
+      "onSuccess" : true,
+      "onFailure" : true
+    },
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "51",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      }
+    }, {
+      "id" : "209",
+      "name" : "Remove",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      }
+    }, {
+      "id" : "382",
+      "name" : "demos",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "test" ]
+      }
+    } ]
+  },
+  "processes" : {
+    "E7AagHreIqGlrFiNB53ox" : {
+      "id" : "E7AagHreIqGlrFiNB53ox",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "OperatorsAndGems",
+        "slug" : "OperatorsAndGems",
+        "x" : 100,
+        "y" : 100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "out"
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "2678/pipelines/OperatorsAndGems",
+        "configurations" : [ ]
+      }
+    }
+  },
+  "connections" : [ ]
+}

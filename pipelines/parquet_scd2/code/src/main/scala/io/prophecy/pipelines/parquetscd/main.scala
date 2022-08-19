@@ -22,8 +22,14 @@ object Main {
       SplitCurrent(spark, df_scd2_customers_parquet_1)
     val df_HandleUpdates =
       HandleUpdates(spark, df_AddScd2Fields, df_SplitCurrent_out0)
-    val df_UnionSCD2 =
-      UnionSCD2(spark,            df_AddScd2Fields, df_HandleUpdates, df_SplitCurrent_out1)
+    val df_KeepExisting =
+      KeepExisting(spark, df_SplitCurrent_out0, df_AddScd2Fields)
+    val df_UnionSCD2 = UnionSCD2(spark,
+                                 df_AddScd2Fields,
+                                 df_HandleUpdates,
+                                 df_KeepExisting,
+                                 df_SplitCurrent_out1
+    )
     scd2_customers_parquet(spark, df_UnionSCD2)
   }
 

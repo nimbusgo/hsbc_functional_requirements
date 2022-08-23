@@ -566,6 +566,11 @@
           "value" : "fixedformat",
           "icon" : "File",
           "width" : "220px"
+        }, {
+          "label" : "PARQUETSCD",
+          "value" : "ParquetSCD",
+          "icon" : "File",
+          "width" : "220px"
         } ],
         "datasetId" : "2678/datasets/customers-raw",
         "updated" : true,
@@ -584,7 +589,7 @@
           "escapeQuotes" : null,
           "charToEscapeQuoteEscaping" : null,
           "encoding" : null,
-          "inferSchema" : true,
+          "inferSchema" : null,
           "enforceSchema" : null,
           "quoteAll" : null,
           "ignoreLeadingWhiteSpaceWriting" : null,
@@ -598,12 +603,12 @@
             "type" : "struct",
             "fields" : [ {
               "name" : "customer_id",
-              "type" : "integer",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "tax_id",
-              "type" : "double",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
@@ -658,12 +663,12 @@
               "metadata" : { }
             }, {
               "name" : "lon",
-              "type" : "double",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "lat",
-              "type" : "double",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
@@ -673,22 +678,22 @@
               "metadata" : { }
             }, {
               "name" : "valid_from",
-              "type" : "integer",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "valid_to",
-              "type" : "double",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "units_purchased",
-              "type" : "double",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "loyalty_segment",
-              "type" : "integer",
+              "type" : "string",
               "nullable" : true,
               "metadata" : { }
             } ]

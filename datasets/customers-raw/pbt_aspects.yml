@@ -3,11 +3,11 @@ schema:
   type: struct
   fields:
   - name: customer_id
-    type: integer
+    type: string
     nullable: true
     metadata: {}
   - name: tax_id
-    type: double
+    type: string
     nullable: true
     metadata: {}
   - name: tax_code
@@ -51,11 +51,11 @@ schema:
     nullable: true
     metadata: {}
   - name: lon
-    type: double
+    type: string
     nullable: true
     metadata: {}
   - name: lat
-    type: double
+    type: string
     nullable: true
     metadata: {}
   - name: ship_to_address
@@ -63,18 +63,18 @@ schema:
     nullable: true
     metadata: {}
   - name: valid_from
-    type: integer
+    type: string
     nullable: true
     metadata: {}
   - name: valid_to
-    type: double
+    type: string
     nullable: true
     metadata: {}
   - name: units_purchased
-    type: double
+    type: string
     nullable: true
     metadata: {}
   - name: loyalty_segment
-    type: integer
+    type: string
     nullable: true
     metadata: {}

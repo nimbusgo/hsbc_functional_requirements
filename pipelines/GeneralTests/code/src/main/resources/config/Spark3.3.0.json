@@ -1,5 +1,5 @@
 {
-  "fabricName" : "test",
+  "fabricName" : "Spark3.3.0",
   "base_path" : "/data/tmp/hsbc/tpch-examples/",
   "flag" : "upper"
 }

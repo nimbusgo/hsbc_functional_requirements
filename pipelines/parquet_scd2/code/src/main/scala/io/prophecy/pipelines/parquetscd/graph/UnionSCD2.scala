@@ -8,6 +8,7 @@ import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import java.time._
 
 object UnionSCD2 {
 
@@ -16,7 +17,10 @@ object UnionSCD2 {
     in0:   DataFrame,
     in1:   DataFrame,
     in2:   DataFrame,
-    in3:   DataFrame
-  ): DataFrame = in0.unionAll(in1).unionAll(in2).unionAll(in3)
+    in3:   DataFrame,
+    in4:   DataFrame,
+    in5:   DataFrame
+  ): DataFrame =
+    in0.unionAll(in1).unionAll(in2).unionAll(in3).unionAll(in4).unionAll(in5)
 
 }

@@ -7,15 +7,19 @@ import io.prophecy.pipelines.scdmerge.udfs.UDFs._
 import io.prophecy.pipelines.scdmerge.udfs._
 import io.prophecy.pipelines.scdmerge.graph._
 import io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements
+import io.prophecy.pipelines.scdmerge.graph.GenerateRandomIncrements_1
 import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import java.time._
 
 object Main {
 
   def apply(spark: SparkSession): Unit = {
-    val df_GenerateRandomIncrements = GenerateRandomIncrements.apply(spark)
+    val df_Source_1                   = Source_1(spark)
+    val df_GenerateRandomIncrements   = GenerateRandomIncrements.apply(spark)
+    val df_GenerateRandomIncrements_1 = GenerateRandomIncrements_1.apply(spark)
     customers_scd1_write(spark, df_GenerateRandomIncrements)
     val df_customers_scd1 = customers_scd1(spark)
     val df_Identity       = Identity(spark, df_customers_scd1)

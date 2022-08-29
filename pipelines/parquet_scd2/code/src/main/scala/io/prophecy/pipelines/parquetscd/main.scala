@@ -11,6 +11,7 @@ import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import java.time._
 
 object Main {
 
@@ -22,12 +23,23 @@ object Main {
       SplitCurrent(spark, df_scd2_customers_parquet_1)
     val df_HandleUpdates =
       HandleUpdates(spark, df_AddScd2Fields, df_SplitCurrent_out0)
-    val df_KeepExisting =
-      KeepExisting(spark, df_SplitCurrent_out0, df_AddScd2Fields)
+    val (df_RowDistributor_1_updates,
+         df_RowDistributor_1_inserts,
+         df_RowDistributor_1_existing
+    )                      = RowDistributor_1(spark, df_HandleUpdates)
+    val df_unupdated       = unupdated(spark,        df_RowDistributor_1_updates)
+    val df_updated         = updated(spark,          df_RowDistributor_1_updates)
+    val df_updates         = updates(spark,          df_updated)
+    val df_retainUnupdated = retainUnupdated(spark,  df_unupdated)
+    val df_historical      = historical(spark,       df_updated)
+    val df_inserts         = inserts(spark,          df_RowDistributor_1_inserts)
+    val df_existing        = existing(spark,         df_RowDistributor_1_existing)
     val df_UnionSCD2 = UnionSCD2(spark,
-                                 df_AddScd2Fields,
-                                 df_HandleUpdates,
-                                 df_KeepExisting,
+                                 df_updates,
+                                 df_historical,
+                                 df_retainUnupdated,
+                                 df_inserts,
+                                 df_existing,
                                  df_SplitCurrent_out1
     )
     scd2_customers_parquet(spark, df_UnionSCD2)

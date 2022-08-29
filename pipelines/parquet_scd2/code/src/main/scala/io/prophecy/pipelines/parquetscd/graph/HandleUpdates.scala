@@ -8,6 +8,7 @@ import org.apache.spark._
 import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
+import java.time._
 
 object HandleUpdates {
 
@@ -20,15 +21,7 @@ object HandleUpdates {
       .as("increment")
       .join(current.as("current"),
             col("current.customer_id") === col("increment.customer_id"),
-            "inner"
-      )
-      .where(
-        !(col("current.tax_id") <=> col("increment.tax_id"))
-          .and(col("current.tax_code") <=> col("increment.tax_code"))
-          .and(
-            (col("current.customer_name") <=> col("increment.customer_name"))
-              .and(col("current.state") <=> col("increment.state"))
-          )
+            "outer"
       )
       .select(
         col("current.customer_id").as("customer_id"),
@@ -37,9 +30,18 @@ object HandleUpdates {
         col("current.customer_name").as("customer_name"),
         col("current.state").as("state"),
         col("current.from_time").as("from_time"),
-        col("increment.from_time").as("end_time"),
-        lit(false).as("is_current"),
-        lit(true).as("is_old_value")
+        col("current.end_time").as("end_time"),
+        col("current.is_current").as("is_current"),
+        col("current.is_old_value").as("is_old_value"),
+        col("increment.customer_id").as("source_customer_id"),
+        col("increment.tax_id").as("source_tax_id"),
+        col("increment.tax_code").as("source_tax_code"),
+        col("increment.customer_name").as("source_customer_name"),
+        col("increment.state").as("source_state"),
+        col("increment.from_time").as("source_from_time"),
+        col("increment.end_time").as("source_end_time"),
+        col("increment.is_current").as("source_is_current"),
+        col("increment.is_old_value").as("source_is_old_value")
       )
 
 }

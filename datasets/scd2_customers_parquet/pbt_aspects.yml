@@ -24,7 +24,7 @@ schema:
     metadata: {}
   - name: from_time
     type: timestamp
-    nullable: false
+    nullable: true
     metadata: {}
   - name: end_time
     type: timestamp
@@ -32,9 +32,9 @@ schema:
     metadata: {}
   - name: is_current
     type: boolean
-    nullable: false
+    nullable: true
     metadata: {}
   - name: is_old_value
     type: boolean
-    nullable: false
+    nullable: true
     metadata: {}

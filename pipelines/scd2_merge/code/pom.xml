@@ -9,8 +9,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
     <properties>
         <scalaBaseVersion>2.12</scalaBaseVersion>
         <scalaVersion>2.12.15</scalaVersion>
-        <sparkVersion>3.0.1</sparkVersion>
-        <prophecyLibsVersion>5.0.4</prophecyLibsVersion>
+        <sparkVersion>3.3.0</sparkVersion>
+        <prophecyLibsVersion>5.1.2</prophecyLibsVersion>
     </properties>
     <repositories>
         <repository>

@@ -24,25 +24,32 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "51",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small" ]
-      }
-    }, {
-      "id" : "209",
-      "name" : "Remove",
-      "clusterSizes" : {
-        "default" : "Small",
-        "availableClusterSizes" : [ "Small" ]
-      }
-    }, {
       "id" : "382",
       "name" : "demos",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small", "test" ]
+      }
+    }, {
+      "id" : "307",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "743",
+      "name" : "Spark3.2.1",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      }
+    }, {
+      "id" : "745",
+      "name" : "Spark3.3.0",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
       }
     } ]
   },
@@ -75,7 +82,12 @@
       },
       "properties" : {
         "pipelineId" : "2678/pipelines/OperatorsAndGems",
-        "configurations" : [ ]
+        "configurations" : {
+          "schema" : [ ],
+          "instances" : [ "Remove", "default", "dev", "demos", "test" ],
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
       }
     }
   },

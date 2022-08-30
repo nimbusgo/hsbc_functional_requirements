@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "51",
+    "fabricId" : "382",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -18,24 +18,9 @@
         "type" : "record",
         "fields" : [ ]
       },
-      "fabrics" : {
-        "dev" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "test" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "Remove" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "demos" : {
-          "type" : "record",
-          "fields" : [ ]
-        }
-      }
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
     },
     "sparkConf" : [ ],
     "hadoopConf" : [ ],

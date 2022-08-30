@@ -24,12 +24,6 @@
     "packageName" : "data"
   },
   "connections" : [ {
-    "id" : "qCj-CJanRhh8LDFKjQnuR",
-    "source" : "wz0WSdJx7ONOTZ_4usnU2",
-    "sourcePort" : "1NSu3O9EKAJK2v3Elcv6r",
-    "target" : "YNviEocRtOCgENWYPdOMj",
-    "targetPort" : "do3rjNqgWLkCLgkAMioBw"
-  }, {
     "id" : "fg_K4SJsloRqVYGP076oK",
     "source" : "OKu3d851oSpexcZimzWXK",
     "sourcePort" : "_IeGgoQg2HZIKVYlO3yZr",
@@ -95,6 +89,12 @@
     "sourcePort" : "iC93nYRnKVXovsjyQSdjD",
     "target" : "eWIdee1UtnlcLmZotrJKC",
     "targetPort" : "inRFkgrz4c4H9eecMztgu"
+  }, {
+    "id" : "yW73tsUBS7xYHVdboCEAq",
+    "source" : "wz0WSdJx7ONOTZ_4usnU2",
+    "sourcePort" : "1NSu3O9EKAJK2v3Elcv6r",
+    "target" : "YNviEocRtOCgENWYPdOMj",
+    "targetPort" : "do3rjNqgWLkCLgkAMioBw"
   } ],
   "processes" : {
     "SS37A47X53wxr0AVJvbP-" : {
@@ -589,7 +589,7 @@
           "escapeQuotes" : null,
           "charToEscapeQuoteEscaping" : null,
           "encoding" : null,
-          "inferSchema" : null,
+          "inferSchema" : true,
           "enforceSchema" : null,
           "quoteAll" : null,
           "ignoreLeadingWhiteSpaceWriting" : null,
@@ -603,12 +603,12 @@
             "type" : "struct",
             "fields" : [ {
               "name" : "customer_id",
-              "type" : "string",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "tax_id",
-              "type" : "string",
+              "type" : "double",
               "nullable" : true,
               "metadata" : { }
             }, {
@@ -663,12 +663,12 @@
               "metadata" : { }
             }, {
               "name" : "lon",
-              "type" : "string",
+              "type" : "double",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "lat",
-              "type" : "string",
+              "type" : "double",
               "nullable" : true,
               "metadata" : { }
             }, {
@@ -678,22 +678,22 @@
               "metadata" : { }
             }, {
               "name" : "valid_from",
-              "type" : "string",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "valid_to",
-              "type" : "string",
+              "type" : "double",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "units_purchased",
-              "type" : "string",
+              "type" : "double",
               "nullable" : true,
               "metadata" : { }
             }, {
               "name" : "loyalty_segment",
-              "type" : "string",
+              "type" : "integer",
               "nullable" : true,
               "metadata" : { }
             } ]

@@ -17,9 +17,10 @@ object Main {
 
   def apply(spark: SparkSession): Unit = {
     val df_GenerateRandomIncrements = GenerateRandomIncrements.apply(spark)
+    val df_customers_scd1           = customers_scd1(spark)
+    val df_OrderBy_1                = OrderBy_1(spark, df_customers_scd1)
     customers_scd1_write(spark, df_GenerateRandomIncrements)
-    val df_customers_scd1 = customers_scd1(spark)
-    val df_Identity       = Identity(spark, df_customers_scd1)
+    val df_Identity = Identity(spark, df_OrderBy_1)
   }
 
   def main(args: Array[String]): Unit = {

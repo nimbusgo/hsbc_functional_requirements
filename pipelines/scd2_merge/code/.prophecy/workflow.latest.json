@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "scala",
-    "fabricId" : "51",
+    "fabricId" : "382",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -18,24 +18,9 @@
         "type" : "record",
         "fields" : [ ]
       },
-      "fabrics" : {
-        "dev" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "test" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "Remove" : {
-          "type" : "record",
-          "fields" : [ ]
-        },
-        "demos" : {
-          "type" : "record",
-          "fields" : [ ]
-        }
-      }
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default"
     },
     "sparkConf" : [ ],
     "hadoopConf" : [ ],
@@ -185,73 +170,73 @@
         "name" : "GenerateRandomIncrements"
       },
       "connections" : [ {
-        "id" : "ZQlOoXkBD6ZjWriLEj4NY",
+        "id" : "qCj-CJanRhh8LDFKjQnuR",
         "source" : "wz0WSdJx7ONOTZ_4usnU2$$Z-fir9Ho21X-WsMxBDHxH",
         "sourcePort" : "1NSu3O9EKAJK2v3Elcv6r$$prKFQwB6NE9ftZvHDAFAq",
         "target" : "YNviEocRtOCgENWYPdOMj$$7FVcrLVB0R4G0nXqrPbKA",
         "targetPort" : "do3rjNqgWLkCLgkAMioBw$$_ufUs5S_KeW9dFQF_S9s2"
       }, {
-        "id" : "G8AjAWk1sufqXKdZNb-Qa",
+        "id" : "fg_K4SJsloRqVYGP076oK",
         "source" : "OKu3d851oSpexcZimzWXK$$GiFhvWKv2-yP2A_Rc9ZWR",
         "sourcePort" : "_IeGgoQg2HZIKVYlO3yZr$$5kewsqASr-pA5VM7Q1c68",
         "target" : "wz0WSdJx7ONOTZ_4usnU2$$Z-fir9Ho21X-WsMxBDHxH",
         "targetPort" : "v3LDpSD00iIyk4TBqGVOV$$MRzlMKa7voeRjI0TEKHDH"
       }, {
-        "id" : "hFB5xrAiicKCAgu7O9W2b",
+        "id" : "veZTak2aT2OSqhefui3MY",
         "source" : "YNviEocRtOCgENWYPdOMj$$7FVcrLVB0R4G0nXqrPbKA",
         "sourcePort" : "057VFPwOrm0L9Xzf4MYVv$$6vMcQcomapXtuNkSg5ViT",
         "target" : "-5DveK6Otu7MPTBk0jobs$$BiUbuJd_0X1P-Rar58S_2",
         "targetPort" : "yOHyolFwFQGWrSyDbbj6L$$sgYDJCtzBQhPlJ-AuodQ6"
       }, {
-        "id" : "G6jCMcr5P_VadbQHoPKv1",
+        "id" : "Ac-GRcqkwPDuWgMQVtA_W",
         "source" : "-5DveK6Otu7MPTBk0jobs$$BiUbuJd_0X1P-Rar58S_2",
         "sourcePort" : "GE9JESBw8_go9Sw_YhHtb$$eLFX6V4MH8K_7wOCBxE9Z",
         "target" : "XHRTUyEPcCaSmkHMiU81F$$5STyeKH6u47IUq4z889v6",
         "targetPort" : "94xS0mOsUorJDSt_PkVHE$$dFJZk445Ib_AwPv40KE16"
       }, {
-        "id" : "Nh438Mj97CZydPOVTGFZ9",
+        "id" : "HamR2wCjPYcQFswMxcwUi",
         "source" : "-5DveK6Otu7MPTBk0jobs$$BiUbuJd_0X1P-Rar58S_2",
         "sourcePort" : "ShETxzUG5LRRaT7l2imH0$$IF7OEFiywPDkUwDXx8Y39",
         "target" : "9mVDxuIeLUqIh0eTW2nNq$$GZpN0ENCTu0NB63X2TkzF",
         "targetPort" : "FBsoEl2wMR0JZNGmMdTHN$$9cUIVLykpaywbPJuvuGCv"
       }, {
-        "id" : "Qywx3W22HTTUBxPqk2xHU",
+        "id" : "cQsJgaSyrnpXO7ZnOm6l8",
         "source" : "9mVDxuIeLUqIh0eTW2nNq$$GZpN0ENCTu0NB63X2TkzF",
         "sourcePort" : "0Mt4uKfp-tmDCpkqnvqQh$$ca7CiSitJwDO6prsHS2sl",
         "target" : "XHRTUyEPcCaSmkHMiU81F$$5STyeKH6u47IUq4z889v6",
         "targetPort" : "Y1WHYurUYh6fNlun_9_-4$$3S0hnP4VbxJr1Cavsh2dL"
       }, {
-        "id" : "_CDQKMQypvapYSXaOx2zS",
+        "id" : "FctKY6pYBQoUguM_dNNpC",
         "source" : "-5DveK6Otu7MPTBk0jobs$$BiUbuJd_0X1P-Rar58S_2",
         "sourcePort" : "c9nChhYrUlMGKLhliNcWX$$ULy1_uldeScmZSE494gEr",
         "target" : "SR0_syn-rkKxc24HiwTzA$$fFXSEkP7a_pN7kRDGNSDD",
         "targetPort" : "CUaqZtUoJjj909mafgusj$$WTya4ncZ4o-Ee4_eb9OzD"
       }, {
-        "id" : "5N0HRIAnkn_bmz_cMI_UT",
+        "id" : "zZB2jkSLrgrO_4GyQtjeA",
         "source" : "SR0_syn-rkKxc24HiwTzA$$fFXSEkP7a_pN7kRDGNSDD",
         "sourcePort" : "wl-3pgYBDE7BeqgyhvlZC$$d9Nj8Wspt3XD1Drk5HYKv",
         "target" : "XHRTUyEPcCaSmkHMiU81F$$5STyeKH6u47IUq4z889v6",
         "targetPort" : "wRZaIsByp5Y3uao7qrYBk$$iIrTip0Jy5z5CcG9g281j"
       }, {
-        "id" : "joh_uhZDui2OCbUnzfxyW",
+        "id" : "S49MvxfNRThqFYGKhgHiE",
         "source" : "XHRTUyEPcCaSmkHMiU81F$$5STyeKH6u47IUq4z889v6",
         "sourcePort" : "wsI6-N7LbOCM_euR5ubBr$$RLWE1TsPhSOploanOtRBn",
         "target" : "SS37A47X53wxr0AVJvbP-$$oQ9yCNNceRgKLttAiNiZL",
         "targetPort" : "96sYRiesgmbGkc7vaFZoH$$5XXZ5_DutJjS9W7Q819ve"
       }, {
-        "id" : "c-TpR-KUWlD7Dbaxc830p",
+        "id" : "6DRUhAd1sCAD8NbBNMgw1",
         "source" : "SS37A47X53wxr0AVJvbP-$$oQ9yCNNceRgKLttAiNiZL",
         "sourcePort" : "HUVkTVNRUhbwmlBomTRen$$zpAe359g7a208veMZhA5R",
         "target" : "fM4IMuutymg-LFMzTyq7S$$FDlPDNkbNlsuPdCQkGPmv",
         "targetPort" : "2R9-xppLg6FliJEGEF6OT$$njMmvnf-0ZbGhKLWjwyLa"
       }, {
-        "id" : "hHf4pixJ4HdJGk4ONpjEe",
+        "id" : "vkrKBMmnzmrfLB58LUVI5",
         "source" : "JQfmKtsM414TZ7j5JiIon$$Jwf9RAaqNLBApNaellySM",
         "sourcePort" : "DKP8PyX7lNCFwOd09O0FG$$Wn2MBOLTkscI5KCB5EyJW",
         "target" : "OKu3d851oSpexcZimzWXK$$GiFhvWKv2-yP2A_Rc9ZWR",
         "targetPort" : "4Oy-qn7VGugdu-QFKpORX$$GGG3rKtW167_wHeWVdmBa"
       }, {
-        "id" : "h1PowdtwTMswG8o5S14Mo",
+        "id" : "5thKwycK87jmTyNJo-SCO",
         "source" : "fM4IMuutymg-LFMzTyq7S$$FDlPDNkbNlsuPdCQkGPmv",
         "sourcePort" : "iC93nYRnKVXovsjyQSdjD$$6kkXHwIEx3bEqezA7RcqA",
         "target" : "eWIdee1UtnlcLmZotrJKC$$4TDRji8CcLhzgm9W7T269",
@@ -264,8 +249,8 @@
           "metadata" : {
             "label" : "SelectFields",
             "slug" : "SelectFields",
-            "x" : 500.000388767542,
-            "y" : 300,
+            "x" : 540.0003887675421,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -329,8 +314,8 @@
           "metadata" : {
             "label" : "DropRandomId",
             "slug" : "DropRandomId",
-            "x" : 1682.0006623756515,
-            "y" : 300,
+            "x" : 1722.0006623756515,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -375,8 +360,8 @@
           "metadata" : {
             "label" : "customers-raw",
             "slug" : "customers_raw",
-            "x" : 218,
-            "y" : 302,
+            "x" : 258,
+            "y" : 342,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -401,8 +386,8 @@
           "metadata" : {
             "label" : "DedupeCustomerId_1",
             "slug" : "DedupeCustomerId_1",
-            "x" : 1835.00054026842,
-            "y" : 300,
+            "x" : 1875.00054026842,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -436,8 +421,8 @@
           "metadata" : {
             "label" : "DedupeCustomerId",
             "slug" : "DedupeCustomerId",
-            "x" : 700.00054026842,
-            "y" : 300,
+            "x" : 740.00054026842,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -471,8 +456,8 @@
           "metadata" : {
             "label" : "random_edits",
             "slug" : "random_edits",
-            "x" : 1301.0004259608047,
-            "y" : 526,
+            "x" : 1341.0004259608047,
+            "y" : 566,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -517,8 +502,8 @@
           "metadata" : {
             "label" : "AddRandomID",
             "slug" : "AddRandomID",
-            "x" : 900.0004162864619,
-            "y" : 300,
+            "x" : 940.0004162864619,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -563,8 +548,8 @@
           "metadata" : {
             "label" : "shift_ids",
             "slug" : "shift_ids",
-            "x" : 1302.0001560010307,
-            "y" : 387,
+            "x" : 1342.0001560010307,
+            "y" : 427,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -609,8 +594,8 @@
           "metadata" : {
             "label" : "Union",
             "slug" : "Union",
-            "x" : 1500.000486000446,
-            "y" : 300,
+            "x" : 1540.000486000446,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
@@ -644,8 +629,8 @@
           "metadata" : {
             "label" : "Split3",
             "slug" : "Split3",
-            "x" : 1100.000144907495,
-            "y" : 300,
+            "x" : 1140.000144907495,
+            "y" : 340,
             "phase" : 0,
             "cache" : false,
             "detailedStats" : false,
